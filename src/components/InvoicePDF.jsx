@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   label: {
-    width: 60,
+    width: 49,
     fontWeight: "bold",
   },
   value: {
@@ -216,7 +216,7 @@ const InvoicePDF = ({ data }) => {
             ].map((item, i) => (
               <PdfView key={i} style={styles.row}>
                 <PdfText style={styles.label}>{item.label}</PdfText>
-                <PdfText style={styles.value}>{item.value}</PdfText>
+                <PdfText style={styles.value}>{`: ${item.value || "N/A"}`}</PdfText>
               </PdfView>
             ))}
           </PdfView>
