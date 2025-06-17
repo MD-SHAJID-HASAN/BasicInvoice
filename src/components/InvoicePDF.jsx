@@ -170,19 +170,19 @@ const InvoicePDF = ({ data }) => {
 
   const companies = {
     company1: {
-      name: "SUMON HANIF SCRAP AND METAL WASTE TRADING L.L.C.",
+      name: "SUMON HANIF SCRAP & METAL WASTE TRADING L.L.C.",
       details: [
-        "P.O. Box: 5328, Dubai - UAE",
-        "Tel.: +97142677707",
+        "P.O. Box: ####, Deira, Dubai, UAE",
+        "Tel.: +971566351138",
         "Email: admin.gbs@sumonHanif.com",
-        "TRN No.: 100247745100003",
+        "TRN No.: 100434654800003",
       ],
     },
     company2: {
       name: "AL SETOU METAL SCRAP. TR",
       details: [
-        "P.O. Box: 1234, Sharjah - UAE",
-        "Tel.: +97112345678",
+        "P.O. Box: ####, Industrial Area 10, Sharjah, UAE",
+        "Tel.: +971566452008",
         "Email: contact@alsetoumetal.com",
         "TRN No.: 103208918500003",
       ],
