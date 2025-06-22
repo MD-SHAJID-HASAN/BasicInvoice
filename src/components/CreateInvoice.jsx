@@ -170,8 +170,8 @@ export default function CreateInvoice() {
                 <tr>
                   <th className="p-2 border">#</th>
                   <th className="p-2 border">Description</th>
-                  <th className="p-2 border">Unit Price</th>
                   <th className="p-2 border">Net Weight</th>
+                  <th className="p-2 border">Unit Price</th>
                   <th className="p-2 border">Total</th>
                 </tr>
               </thead>
