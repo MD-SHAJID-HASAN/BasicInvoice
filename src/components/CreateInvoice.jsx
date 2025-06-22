@@ -33,11 +33,7 @@ export default function CreateInvoice() {
     setInvoiceData((prev) => ({
       ...prev,
       [name]:
-        type === "number"
-          ? value === ""
-            ? ""
-            : parseFloat(value)
-          : value,
+        type === "number" ? (value === "" ? "" : parseFloat(value)) : value,
     }));
   };
 
@@ -113,7 +109,9 @@ export default function CreateInvoice() {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium">Invoice Number</label>
+              <label className="block text-sm font-medium">
+                Invoice Number
+              </label>
               <input
                 type="text"
                 name="invoiceNumber"
@@ -154,7 +152,9 @@ export default function CreateInvoice() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Customer Address</label>
+            <label className="block text-sm font-medium">
+              Customer Address
+            </label>
             <input
               name="customerAddress"
               value={invoiceData.customerAddress}
@@ -192,9 +192,9 @@ export default function CreateInvoice() {
                     <td className="p-2 border">
                       <input
                         type="number"
-                        value={item.unitPrice}
+                        value={item.netWeight}
                         onChange={(e) =>
-                          handleItemChange(index, "unitPrice", e.target.value)
+                          handleItemChange(index, "netWeight", e.target.value)
                         }
                         className="w-full p-1 border border-gray-300 rounded"
                         min={0}
@@ -204,9 +204,9 @@ export default function CreateInvoice() {
                     <td className="p-2 border">
                       <input
                         type="number"
-                        value={item.netWeight}
+                        value={item.unitPrice}
                         onChange={(e) =>
-                          handleItemChange(index, "netWeight", e.target.value)
+                          handleItemChange(index, "unitPrice", e.target.value)
                         }
                         className="w-full p-1 border border-gray-300 rounded"
                         min={0}
@@ -219,10 +219,15 @@ export default function CreateInvoice() {
                   </tr>
                 ))}
                 <tr>
-                  <td colSpan={4} className="text-right font-semibold p-2 border">
+                  <td
+                    colSpan={4}
+                    className="text-right font-semibold p-2 border"
+                  >
                     Subtotal
                   </td>
-                  <td className="text-right p-2 border">{totalSum.toFixed(2)}</td>
+                  <td className="text-right p-2 border">
+                    {totalSum.toFixed(2)}
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -240,7 +245,11 @@ export default function CreateInvoice() {
             <input
               type="number"
               name="paidAmount"
-              value={invoiceData.paidAmount === undefined ? "" : invoiceData.paidAmount}
+              value={
+                invoiceData.paidAmount === undefined
+                  ? ""
+                  : invoiceData.paidAmount
+              }
               onChange={handleChange}
               className="mt-1 block w-full border border-gray-300 rounded-md p-2"
               min={0}
