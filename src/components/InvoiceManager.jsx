@@ -18,7 +18,7 @@ export default function InvoiceManager({ invoiceData }) {
       <div className="p-4">
         <PDFDownloadLink
           document={<InvoicePDF data={invoiceData} />}
-          fileName={`Invoice-${invoiceData.companyName}.pdf`}
+          fileName={`Invoice-${invoiceData.customerName}.pdf`}
           className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
         >
           {({ loading }) => (loading ? "Generating PDF..." : "Download PDF")}
