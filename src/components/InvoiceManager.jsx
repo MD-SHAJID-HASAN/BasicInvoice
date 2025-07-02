@@ -15,10 +15,10 @@ export default function InvoiceManager({ invoiceData }) {
       </PDFViewer>
 
       {/* Download Button */}
-      <div className="p-4 hidden">
+      <div className="p-4">
         <PDFDownloadLink
           document={<InvoicePDF data={invoiceData} />}
-          fileName={`Invoice-${invoiceData.invoiceNumber}.pdf`}
+          fileName={`Invoice-${invoiceData.companyName}.pdf`}
           className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
         >
           {({ loading }) => (loading ? "Generating PDF..." : "Download PDF")}
