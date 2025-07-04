@@ -225,11 +225,11 @@ const totalAmount = data?.items?.reduce((acc, item) => acc + (item?.totalAmount 
 
           <PdfView style={styles.invoiceMetaBox}>
             <PdfText>
-              <PdfText style={{ fontWeight: "bold" }}>Inv. No. </PdfText>
+              <PdfText style={{ fontWeight: "bold" }}>Inv. No. : </PdfText>
               {data.invoiceNumber || "N/A"}
             </PdfText>
             <PdfText>
-              <PdfText style={{ fontWeight: "bold" }}>Inv. Date </PdfText>
+              <PdfText style={{ fontWeight: "bold" }}>Inv. Date : </PdfText>
               {data.invoiceDate || "N/A"}
             </PdfText>
           </PdfView>
