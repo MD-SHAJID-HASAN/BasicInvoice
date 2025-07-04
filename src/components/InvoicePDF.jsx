@@ -154,14 +154,16 @@ const styles = StyleSheet.create({
 });
 
 const InvoicePDF = ({ data }) => {
-  const totalWeight = data.items
-    .reduce((acc, item) => acc + Number(item.netWeight || 0), 0)
-    .toFixed(3);
+  
+  // const totalWeight = data?.items
+  //   .reduce((acc, item) => acc + Number(item.netWeight || 0), 0)
+  //   .toFixed(3);
 
-  const totalAmount = data.items.reduce(
-    (acc, item) => acc + Number(item.totalAmount || 0),
-    0
-  );
+    const totalWeight = data?.items?.reduce((acc, item) => acc + (item?.totalWeight || 0), 0) || 0;
+
+
+const totalAmount = data?.items?.reduce((acc, item) => acc + (item?.totalAmount || 0), 0) || 0;
+
 
   const vat = Number((totalAmount * 0.05).toFixed(2));
   const grandTotal = totalAmount + vat;
