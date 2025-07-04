@@ -14,9 +14,9 @@ export default function Home() {
   return (
     <div className="font-[family-name:var(--font-geist-sans)] text-black bg-white">
 
-      <div className="flex justify-between ">
-        <h1 className="text-2xl font-bold mb-6">Create Invoice</h1>
-        <div className="p-4">
+      <div className="flex justify-between p-6 pb-0">
+        <h1 className="text-2xl font-bold ">Create Invoice</h1>
+        <div className="">
           {invoiceData?.items && (<PDFDownloadLink
             document={<InvoicePDF data={invoiceData}/>}
             fileName={`${invoiceData.customerName ? invoiceData.customerName : 'NoName'} ${invoiceData.invoiceDate ? invoiceData.invoiceDate : today}.pdf`}
