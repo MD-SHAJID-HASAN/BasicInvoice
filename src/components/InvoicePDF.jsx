@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
   },
   value: {
     flex: 1,
+  
   },
   invoiceMetaBox: {
     borderWidth: 1,
@@ -159,8 +160,7 @@ const InvoicePDF = ({ data }) => {
   //   .reduce((acc, item) => acc + Number(item.netWeight || 0), 0)
   //   .toFixed(3);
 
-    const totalWeight = data?.items?.reduce((acc, item) => acc + (item?.totalWeight || 0), 0) || 0;
-
+    const totalWeight = (data?.items?.reduce((acc, item) => acc + (item?.netWeight || 0), 0) || 0).toFixed(3);
 
 const totalAmount = data?.items?.reduce((acc, item) => acc + (item?.totalAmount || 0), 0) || 0;
 
